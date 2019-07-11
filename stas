@@ -1,0 +1,124 @@
+import requests
+
+import vk_api
+from vk_api import VkUpload
+from vk_api.longpoll import VkLongPoll, VkEventType
+from vk_api.utils import get_random_id
+import random
+
+session = requests.Session()
+
+vk_session = vk_api.VkApi(token='00f5be01a6c866233a15ffe410519c1fd04f5507c0f8fdec0f8a917a1d63e5b0c278bb67e79f9fa74fafe')
+
+
+
+attachments = []
+attachments1 = []
+
+
+
+
+
+upload = VkUpload(vk_session)
+image_urlstas = 'https://pp.userapi.com/c852128/v852128955/15249d/rExs-XqtT8A.jpg'
+image_urliphone = 'https://pp.userapi.com/c850528/v850528294/15f648/xlM1bv2REJY.jpg'
+
+
+
+image = session.get(image_urlstas, stream=True)
+image1 = session.get(image_urliphone, stream=True)
+photo = upload.photo_messages(photos=image.raw)[0]
+photo1 = upload.photo_messages(photos=image1.raw)[0]
+attachments.append(
+    'photo{}_{}'.format(photo['owner_id'], photo['id'])
+)
+
+attachments1.append(
+    'photo{}_{}'.format(photo1['owner_id'], photo1['id'])
+)
+
+
+
+from vk_api.longpoll import VkLongPoll, VkEventType
+longpoll = VkLongPoll(vk_session)
+vk = vk_session.get_api()
+for event in longpoll.listen():
+    if event.type == VkEventType.MESSAGE_NEW and event.to_me and event.text:
+   #Слушаем longpoll, если пришло сообщение то:
+
+        whoareyou = ['son of bitch', 'Nigga', '05 0B05RAL5YA', 'Гоп тупо лучше', "Эпл, ээпл!", 'Ahahahaha look, gondon sayd something', 'This user loves to suck', 'This user is great', 'Great job, man!']
+
+        if True:
+                    image_urlnigga = ['https://sun1-22.userapi.com/c848520/v848520616/1d0d90/Oitof4XEmvs.jpg', 'https://pp.userapi.com/c848520/v848520616/1d0d9a/FfK48jC-IFg.jpg', 'https://pp.userapi.com/c848520/v848520616/1d0dc2/heSd2tUjYoQ.jpg', 'https://pp.userapi.com/c848520/v848520616/1d0d25/DAsyFP2X4NE.jpg',
+                                      'https://pp.userapi.com/c848520/v848520616/1d0d1c/N7fTXJEvgbA.jpg', 'https://pp.userapi.com/c848520/v848520616/1d0d2e/ttrooq4gySM.jpg',
+                                      'https://pp.userapi.com/c848520/v848520616/1d0d13/3-gdBkYlNmY.jpg', 'https://pp.userapi.com/c850424/v850424135/156b96/I_6bRTAL9qM.jpg',
+                                      'https://pp.userapi.com/c850424/v850424135/156b78/WcH8l_gqACc.jpg', 'https://pp.userapi.com/c850424/v850424135/156b8c/Ko9BTJ2bCUg.jpg',
+                                      'https://pp.userapi.com/c852016/v852016203/1609ee/8m4qSaHFe1M.jpg', 'https://pp.userapi.com/c852016/v852016203/1609e4/Q70IvJCOzgo.jpg',
+                                      'https://pp.userapi.com/c852016/v852016203/1609af/1PCqLp2a0Lc.jpg', 'https://pp.userapi.com/c852016/v852016203/1609d0/dNC75WB8-uc.jpg',
+                                      'https://pp.userapi.com/c852016/v852016203/1609a5/Y3EEWoWhiFc.jpg', 'https://pp.userapi.com/c849024/v849024793/1a6359/seuMT3Q9xis.jpg',
+                                      'https://pp.userapi.com/c850032/v850032793/197a6e/-_xfeRLrJ34.jpg', 'https://pp.userapi.com/c841135/v841135154/75b80/EjuC4qTE8m0.jpg',
+                                      'https://pp.userapi.com/c845016/v845016312/18d20/KPI2MqZBEQA.jpg', 'https://pp.userapi.com/c855332/v855332621/389d7/0Z7CGpJcVec.jpg',
+                                      'https://pp.userapi.com/c855332/v855332621/389c3/vdfsvyR4IfE.jpg', 'https://pp.userapi.com/c851136/v851136914/bdce2/CHluT4R5WcU.jpg',
+                                      'https://pp.userapi.com/c7007/v7007349/47574/fTLFxIRcwQ8.jpg', 'https://pp.userapi.com/c849220/v849220849/115eb9/2FSWB2Iutwc.jpg',
+                                      'https://pp.userapi.com/c845418/v845418252/190af0/wXY-R7fE_aw.jpg', 'https://pp.userapi.com/c844216/v844216628/148130/YsMpvPS_Prg.jpg',
+                                      'https://pp.userapi.com/c852220/v852220187/4a70e/vPgdLE8kPbM.jpg', 'https://pp.userapi.com/c844216/v844216569/12c19d/j_Cjf8-T7Gw.jpg',
+                                      'https://pp.userapi.com/c849332/v849332605/ad589/ZsbDOaMtsGs.jpg', 'https://pp.userapi.com/c852220/v852220171/33d29/hE1MnVZhQTc.jpg',
+                                      'https://pp.userapi.com/c851028/v851028074/36d88/EDZvxKUo5DA.jpg', 'https://pp.userapi.com/c851028/v851028074/36d6d/UbyXOwxSmJs.jpg',
+                                      'https://pp.userapi.com/c851028/v851028074/36d64/WMBRi9HzIEU.jpg', 'https://pp.userapi.com/c851132/v851132101/33c18/35QJ2rFcDxY.jpg',
+                                      'https://pp.userapi.com/c847218/v847218628/eaa15/V9TM83yIh_Y.jpg']
+                    imagenigga = session.get(random.choice(image_urlnigga), stream=True)
+                    photonigga = upload.photo_messages(photos=imagenigga.raw)[0]
+                    attachmentsalbum = []
+
+                    attachmentsalbum.append(
+                        'photo{}_{}'.format(photonigga['owner_id'], photonigga['id'])
+                    )
+
+
+
+                    if event.from_user: #Если написали в Лs
+                        if event.text == 'Стас':
+                            vk.messages.send(  # Отправляем сообщение
+                                user_id=event.user_id,
+                                random_id=get_random_id(),
+                                attachment=','.join(attachments),
+                                message='Стас'
+                            )
+                            vk.messages.send(  # Отправляем сообщение
+                                user_id=event.user_id,
+                                random_id=get_random_id(),
+                                message=random.choice(whoareyou)
+                            )
+                        elif event.text == 'Айфон':
+                                vk.messages.send(  # Отправляем сообщение
+                                    user_id=event.user_id,
+                                    random_id=get_random_id(),
+                                    attachment=','.join(attachments1),
+                                    message='Ксяоме лучшн)))'
+                                )
+                                vk.messages.send(  # Отправляем сообщение
+                                    user_id=event.user_id,
+                                    random_id=get_random_id(),
+                                    message=random.choice(whoareyou)
+                                )
+                        elif event.text == 'PAPA' or event.text == 'papa' or event.text == 'Papa':
+                            vk.messages.send(  # Отправляем сообщение
+                                user_id=event.user_id,
+                                random_id=get_random_id(),
+                                attachment=','.join(attachmentsalbum),
+                            )
+
+
+
+                        else:
+                            vk.messages.send( #Отправляем сообщение
+                                user_id=event.user_id,
+                                random_id=get_random_id(),
+                                message=random.choice(whoareyou)
+		            )
+                    elif event.from_chat: #Если написали в Беседе
+                        vk.messages.send( #Отправляем собщение
+                            chat_id=event.chat_id,
+
+                            message=random.choice(whoareyou)
+		            )
